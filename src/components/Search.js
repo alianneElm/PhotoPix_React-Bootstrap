@@ -6,16 +6,19 @@ class Search extends Component{
 
     getData = (e) => {
         e.preventDefault();
-        console.log(this.searchRef.current.value);
+        
+        const input = this.searchRef.current.value;
+
+        this.props.searchData(input)
     }
     
     render(){
         return (
             <form onSubmit={this.getData}> 
                 <div className="row">
-                    {this.props.sms}
+                  
                     <div className="from-group col-md-4">
-                        <input ref={this.searchRef} type="text" className="form-control form-control-lg" placeholder="Search"></input>
+                        <input ref={this.searchRef} type="text" className="form-control form-control-lg" placeholder=""></input>
                     </div>
                     <div className="from-group col-md-4">
                         <input type="submit" className="btn btn-lg btn-danger btn-block" value="Search"></input>
